@@ -16,3 +16,10 @@ Other manufacturer IDs: HX-U5pinW/B or Hi-UK5PinWFWS01W
 I based this loosely on the MakeGood template found here and made some changes. The only thing I did not manage to get working is the low blue LED light when the socket is switched off. LED for power on works fine.
 
 Also be sure to run the commands: `SwitchMode1 5` and `SwitchMode2 5`
+
+To make LED backlight on touch swich dim when 'off' and bright when 'on' use template below
+template: '{"NAME":"Aseer 1-Gang","GPIO":[46,0,157,57,134,132,0,0,131,0,0,21,9],"FLAG":0,"BASE":18}'
+Led1i changes to PWM1i with the above template
+then run the following commands
+'rule1 on power1#state=1 do dimmer 100 endon on power1#state=0 do dimmer 10 endon'
+'rule1 1'
